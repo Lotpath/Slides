@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+
+<head>
+   <title>Presentation Title</title>
+
+   <link rel="stylesheet" href="slides.css">
+   <link rel="stylesheet" href="codemirror.css">
+
+   <script src="jquery-1.8.1.min.js"></script>
+   <script src="fathom.min.js"></script>
+   <script src="codemirror.js"></script>
+   <script src="javascript.js"></script>
+   <script>
+      $(function() {
+         var fathom = $('#slides').fathom();
+
+         $.each($(".codez"), function (i, item) {
+            CodeMirror.fromTextArea(item, {
+               lineNumbers: true,
+               matchBrackets: true
+            });
+         })
+      });
+   </script>
+   <script>
+   </script>
+</head>
+
+<body>
+   <div id="slides">
+
+      <div class="slide slide-title">
+         <header>
+            <h1>Presentation Title</h1>
+            <h2>
+               Presented by<br />
+               Your Name
+            </h2>
+         </header>
+         <p>Today's Date Here</p>
+      </div>
+
+      <div class="slide">
+         <header>
+            <h1>Presentation Agenda</h1>
+         </header>
+         <ul>
+            <li>First we...</li>
+            <li>Then I will...</li>
+            <li>More can go here</li>
+         </ul>
+      </div>
+
+      <div class="slide slide-subtitle">
+         <header>
+            <h1>Subtitled Slide</h1>
+         </header>
+      </div>
+
+      <div class="slide">
+         <header>
+            <h1>Slide with Code</h1>
+         </header>
+         <h2>This Subtitle is an H2</h2>
+         <p><small>Description</small></p>
+         <section class="code-example">
+            <textarea class="codez">(function () {
+   var javaScriptCode = 'examples are supported!',
+      andAreFormatted = {
+         inside: 'textareas',
+         withClassOf: 'codez',
+         things: [12, 23, 34]
+      };
+
+   console.log(javaScriptCode, andAreFormatted);
+})();</textarea>
+         </section>
+      </div>
+
+      <div class="slide slide-title">
+         <header>
+            <h1>Customize</h1>
+         </header>
+         <h2>HTML is flexible</h2>
+         <ul>
+            <li>Add your own styles...</li>
+            <li><em>we accept pull requests</em></li>
+         </ul>
+      </div>
+
+   </div>
+</body>
+
+</html>
